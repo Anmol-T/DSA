@@ -1,0 +1,48 @@
+import java.util.*;
+public class subarray_with_givensum
+{
+    public static void main(String[] args)
+    {
+        int p=1,count=0,sum=0,a=0,max1=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of array");
+        int n=sc.nextInt();
+        System.out.println("Enter the lements of array");
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("ENter the sum to be find");
+        int max=sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            while(a<n-i)
+            {
+            for(int j=i;j<=i+a;j++)
+            {
+                if(j<n)
+                    sum+=arr[j];
+            }
+            if(sum==max)
+            {
+                max1=1;
+                break;
+            }
+            else
+                max1=0;
+            a++;
+            sum=0;
+            }
+            if(max1==1)
+            {
+                System.out.print("Yes");
+                break;
+            }
+            else
+                System.out.println("Nope");
+            a=0;
+        }
+        //System.out.println(max1);
+    }
+}
