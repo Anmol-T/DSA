@@ -1,0 +1,50 @@
+import java.util.*;
+public class Maximum_occ_left_right
+{
+    public static void main(String[] args)
+    {
+        int a=0,c=1,m=0,z=0,max=0;
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        int arr1[]=new int[n];
+        int arr2[]=new int[100];
+        int arr3[]=new int[100];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++)
+        {
+            arr1[i]=sc.nextInt();
+        }
+        for(int i=arr[0];i<=arr1[0];i++)
+        {
+            arr2[a]=i;
+            a++;
+        }
+        while(c<n)
+        {
+            for(int j=arr[c];j<=arr1[c];j++)
+            {
+                for(int k=0;k<arr1[c]-arr[c];k++)
+                {
+                    if(j==arr2[m])
+                    {
+                        arr3[z]=j;
+                        z++;
+                    }
+                    m++;
+                }
+            m=0;
+            }
+            c++;
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(arr3[i]>max)
+                max=arr3[i];
+        }
+        System.out.println("Maximum occuring is ="+max);
+    }
+}
