@@ -1,0 +1,30 @@
+import java.util.*;
+public class freq_in_sorted_array
+{
+    public static void main(String[] args)
+    {
+        int count=0,i=0,a=0;
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n]; 
+        int arr2[]=new int[n];
+        for(int k=0;k<n;k++)
+        {
+            arr[k]=sc.nextInt();
+        }
+        while(i!=n)
+        {
+            count=0;
+            for(int j=i;j<n;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    count++;
+                    a=j+1;}
+            }
+            System.out.print(arr[i]+" "+count);
+            i=a;
+        }
+}
+}
+                
