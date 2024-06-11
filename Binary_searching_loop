@@ -1,0 +1,36 @@
+import java.util.*;
+public class Binary_searching_loop
+{
+    static int binary(int arr[],int n,int k)
+    {
+        int f=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]==k)
+            {
+                f=i;
+                break;
+            }
+            else
+                f=-1;
+        }
+        return f;
+    }
+    public static void main(String[] args)
+    {
+        int find=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of array");
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        System.out.println("Enter the elemnts of array");
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("Enter the number to be found");
+        int k=sc.nextInt();
+        find=binary(arr,n,k);
+        System.out.println(find);
+    }
+}
